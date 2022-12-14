@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
 
 [RequireComponent(typeof(CharacterController))]
 
@@ -32,8 +33,8 @@ public class TPSController : MonoBehaviour
         rotation.y = transform.eulerAngles.y;
 
         playerInput = GetComponent<PlayerInput>();
-        playerInput.actions["Move"].performed += context => { moveInput = context.action.ReadValue<Vector2>(); };
-        playerInput.actions["Move"].canceled += _ => { moveInput = new Vector2(0,0); };
+        //playerInput.actions["Move"].performed += context => { moveInput = context.action.ReadValue<Vector2>(); };
+        //playerInput.actions["Move"].canceled += _ => { moveInput = new Vector2(0,0); };
         playerInput.actions["Look"].performed += context => { lookInput = context.action.ReadValue<Vector2>() / 10; };
         playerInput.actions["Look"].canceled += _ => { lookInput = new Vector2(0,0); };
         playerInput.actions["Jump"].started += _ => { jumpInput = true; };
@@ -67,5 +68,15 @@ public class TPSController : MonoBehaviour
             playerCameraParent.localRotation = Quaternion.Euler(rotation.y, 0, 0);
             transform.eulerAngles = new Vector2(0, rotation.x);
         }
+    }
+
+    public void Move(CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+            moveInput = context.action.ReadValue<Vector2>();
+        else
+            moveInput = new Vector2(0, 0);
+
+        //moveDirection
     }
 }
