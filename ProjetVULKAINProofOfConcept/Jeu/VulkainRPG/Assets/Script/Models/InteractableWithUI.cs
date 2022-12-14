@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class SmithingTable : MonoBehaviour, IInteractable
+public class InteractableWithUI : MonoBehaviour, IInteractable
 {
 
     [SerializeField] private Canvas myUI;
