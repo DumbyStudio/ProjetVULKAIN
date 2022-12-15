@@ -660,6 +660,8 @@ GameObject:
   - component: {fileID: 5816315084986963478}
   - component: {fileID: 1012078801174176741}
   - component: {fileID: 1012078801174176742}
+  - component: {fileID: 6520536568596678494}
+  - component: {fileID: 6520536568596678495}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1047,6 +1049,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6407412903665754580, guid: a42b1bc842507d343adb35c2538e5c1a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6407412903665754581, guid: a42b1bc842507d343adb35c2538e5c1a, type: 3}
       propertyPath: m_Name
       value: Terrain
@@ -1115,6 +1121,85 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6520536568596678494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012078801174176740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193e3634e8206f448a55baec97ab69be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  t: {fileID: 0}
+  autoCalculate: 1
+  onTerrainEffect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6520536568596678495}
+        m_TargetAssemblyTypeName: CharacterTerrainEffect, Assembly-CSharp
+        m_MethodName: OnTerrainEffect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onChangeTerrain:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6520536568596678495}
+        m_TargetAssemblyTypeName: CharacterTerrainEffect, Assembly-CSharp
+        m_MethodName: OnTerrainChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onStopTerrainEffect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6520536568596678495}
+        m_TargetAssemblyTypeName: CharacterTerrainEffect, Assembly-CSharp
+        m_MethodName: OnStopTerrainEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6520536568596678495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012078801174176740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c538aeb6faafd7d44a2a232a9f7c3e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
+  - {fileID: 6745822684769721834, guid: 6d7e4bc98849a56468ed4ac0bcbfc474, type: 3}
+  - {fileID: 6745822684769721834, guid: 6d7e4bc98849a56468ed4ac0bcbfc474, type: 3}
+  sounds:
+  - {fileID: 1312743427331223390, guid: 162db18e79ac21f4485f7329a0fa98b2, type: 3}
+  - {fileID: 1312743427331223390, guid: 162db18e79ac21f4485f7329a0fa98b2, type: 3}
+  cooldownTime: 0.5
 --- !u!1001 &8613168583730349262
 PrefabInstance:
   m_ObjectHideFlags: 0
