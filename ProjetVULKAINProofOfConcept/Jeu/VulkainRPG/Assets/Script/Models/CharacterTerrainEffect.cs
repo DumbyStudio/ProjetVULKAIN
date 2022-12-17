@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CharacterTerrainEffect : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem[] particles;
-    [SerializeField] private AudioSource[] sounds;
+    [SerializeField] private GameObject terrain;
+    private ParticleSystem[] particles;
+    private AudioSource[] sounds;
 
     [SerializeField] private float cooldownTime = 0.5f;
     private bool canEffect;
@@ -14,6 +15,8 @@ public class CharacterTerrainEffect : MonoBehaviour
 
     void Start()
     {
+        this.particles = terrain.GetComponent<TerrainLayersEffects>().particles;
+        this.sounds = terrain.GetComponent<TerrainLayersEffects>().sounds;
         canEffect = true;
     }
     public void OnTerrainEffect(int terrainIndex)
