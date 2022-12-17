@@ -17,6 +17,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private int _numFound;
 
     private IInteractable interactable;
+    private Outline interactableOutline;
 
     private void Start()
     {
@@ -35,17 +36,23 @@ public class Interactor : MonoBehaviour
             if (interactable != newInteractable)
             {
                 interactable = newInteractable;
+                interactableOutline = _colliders[0].transform.Find("Object").Find("Model_0").gameObject.GetComponent<Outline>();
                 interactionPrompt.isDisplayed = false;
             }
             if(interactable != null)
             {
                 if (!interactionPrompt.isDisplayed) interactionPrompt.SetUp(interactable.InteractionPrompt);
+                if (!interactableOutline.enabled) interactableOutline.enabled = true;
                 if (interactInput) interactable.Interact(this);
             }
         }
         else
         {
-            if (interactable != null) interactable = null;
+            if (interactable != null)
+            {
+                interactableOutline.enabled = false;
+                interactable = null;
+            }
             if (interactionPrompt.isDisplayed) interactionPrompt.Close();
         }
 
