@@ -47,7 +47,7 @@ public class CharacterTerrainEffect : MonoBehaviour
         if (currentSound != null)
         {
             currentSound.Stop();
-            Destroy(currentSound);
+            Destroy(currentSound.gameObject);
             currentSound = null;
         }
     }
