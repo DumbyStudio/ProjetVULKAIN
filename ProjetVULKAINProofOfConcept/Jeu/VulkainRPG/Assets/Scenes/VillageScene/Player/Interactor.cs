@@ -36,7 +36,7 @@ public class Interactor : MonoBehaviour
             if (interactable != newInteractable)
             {
                 interactable = newInteractable;
-                interactableOutline = _colliders[0].transform.Find("Object").Find("Model_0").gameObject.GetComponent<Outline>();
+                interactableOutline = _colliders[0].transform.Find("Object").Find("Model").gameObject.GetComponent<Outline>();
                 interactionPrompt.isDisplayed = false;
             }
             if(interactable != null)

@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/VillageScene/VillageScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/CraftingScene/CraftingScene.unity
+    guid: 6de33f0cae96f524a9d3aa76f231950d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 83d287a17190ca9418d0e206df197f20, type: 2}
